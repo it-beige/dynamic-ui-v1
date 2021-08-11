@@ -1,0 +1,121 @@
+// @import "~element-ui/packages/theme-chalk/src/common/var.scss";
+$--color-primary: #409EFF !default;
+$--color-danger: #F56C6C !default;
+$--color-text-placeholder: #C0C4CC !default;
+
+.dy-upload-box {
+  display: flex;
+  overflow-x: auto;
+
+  .file-list {
+    margin-left: 10px;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+
+    i {
+      vertical-align: text-bottom;
+    }
+    .del-btn__icon {
+      color: $--color-danger;
+      cursor: pointer;
+    }
+  }
+
+  .progress-box {
+    margin-left: 10px;
+    min-width: 160px;
+    overflow: hidden;
+
+    div {
+      width: 99%;
+      text-align: left;
+    }
+  }
+
+  .upload {
+    display: flex;
+
+    ::v-deep .el-upload-list {
+      display: flex;
+      align-items: center;
+
+      .el-upload-list__item {
+        margin-top: 0;
+      }
+    }
+
+    ::v-deep .el-icon-close-tip {
+      display: none !important;
+    }
+    ::v-deep {
+      .file__card {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        .file-list__item-delete {
+          display: block;
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 20px;
+          height: 20px;
+          cursor: pointer;
+          &:hover {
+            background-color: $--color-text-placeholder;
+          }
+        }
+        .del-btn__icon {
+          color: $--color-danger;
+          cursor: pointer;
+          font-size: 20px;
+        }
+      }
+      .file-scope__icon {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        i {
+          font-size: 80px;
+          color: $--color-primary;
+        }
+      }
+    }
+  }
+
+  .upload-disabled {
+    display: none;
+    ::v-deep .el-upload {
+      display: none;
+    }
+  }
+  .upload-exceed {
+    ::v-deep .el-upload {
+      display: none;
+    }
+  }
+
+  &::-webkit-scrollbar {
+    width: 10px;
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    background: rgba(144, 147, 153, .3);
+
+    :hover {
+      background: rgba(144, 147, 153, .5)
+    }
+  }
+
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background: #EDEDED;
+  }
+}

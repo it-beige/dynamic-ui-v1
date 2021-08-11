@@ -1,0 +1,66 @@
+// @import "~element-ui/packages/theme-chalk/src/common/var";
+$--color-primary: #409EFF !default;
+$--color-danger: #F56C6C !default;
+$--color-text-placeholder: #C0C4CC !default;
+
+.dy-tree-select-dropdown {
+  max-height: 274px;
+
+
+  .el-tree-node__label {
+    font-weight: normal;
+  }
+
+  .el-tree {
+
+    .is-checked {
+      opacity: inherit;
+    }
+
+    .el-tree__empty-block {
+      min-height: 28px;
+    }
+
+    .el-tree-node__content {
+      height: auto;
+      padding: 0 20px;
+    }
+
+    .is-current {
+
+      .el-tree-node__label {
+        color: $--color-primary;
+        font-weight: 700;
+      }
+
+      .el-tree-node__children .el-tree-node__label {
+        color: #606266;
+        font-weight: normal;
+      }
+    }
+
+    .el-tree-node__content .is-node-disabled {
+      cursor: not-allowed;
+      color: #c0c4cc;
+      width: 100%;
+    }
+
+    .el-tree-node__children .el-tree-node__content .is-node-disabled {
+      color: #c0c4cc;
+    }
+  }
+
+  .el-scrollbar .el-scrollbar__view .el-select-dropdown__item {
+    height: auto;
+    padding: 0;
+  }
+
+  .el-select-dropdown__item.selected {
+    font-weight: normal;
+  }
+
+}
+
+
+
+

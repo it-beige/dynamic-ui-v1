@@ -1,0 +1,97 @@
+.dynamic-form {
+  padding: 10px;
+
+  // flex布局模式下始终换行
+  ::v-deep .el-row--flex {
+    flex-wrap: wrap;
+  }
+
+  // 兼容移动端布局
+  &__layout {
+    @media screen and (max-width: 768px) {
+      padding: 0;
+      ::v-deep .el-form-item__label {
+        width: auto !important;
+      }
+      ::v-deep .el-form-item {
+        margin-bottom: 8px;
+      }
+      ::v-deep .el-form-item__content {
+        margin-left: 0 !important;
+      }
+      ::v-deep .form-item-wrapper {
+        height: initial !important;
+      }
+    }
+  }
+
+  ::v-deep textarea {
+    font-family: "PingFang SC", "Helvetica Neue", Helvetica, "microsoft yahei",
+      arial, STHeiTi, sans-serif;
+  }
+  ::v-deep .el-textarea {
+    .el-textarea__inner {
+      color: #555;
+    }
+  }
+  ::v-deep .el-input {
+    .el-input__inner {
+      /* padding-right: 15px; */
+      color: #555;
+    }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none !important;
+      margin: 0;
+    }
+
+    input[type="number"] {
+      -moz-appearance: textfield;
+    }
+  }
+
+
+  // 保证表单项内容沾满el-col的宽度
+  ::v-deep {
+    .el-autocomplete,
+    .el-switch,
+    .dy-upload-box,
+    .el-select,
+    .slot-box {
+      width: 100% !important;
+    }
+
+    .el-select {
+      ::v-deep .el-input__inner {
+        padding: 0 30px 0 15px;
+      }
+    }
+
+    .el-checkbox-group {
+      .el-checkbox {
+        margin-right: 10px;
+      }
+    }
+
+    .el-radio-group {
+      .el-radio {
+        margin-right: 10px;
+      }
+    }
+
+    .el-date-editor--date {
+      ::v-deep .el-input__inner {
+        padding: 0 15px 0 30px !important;
+      }
+    }
+  }
+
+  // 预留按钮样式
+  .form-button {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+}
+
